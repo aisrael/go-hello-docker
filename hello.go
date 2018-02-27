@@ -2,8 +2,13 @@ package main
 
 import (
 	"fmt"
+	"os"
 )
 
 func main() {
-	fmt.Printf("Hello, world!\n")
+	who := "world"
+	if len(os.Args) > 1 {
+		who = os.Args[1]
+	}
+	fmt.Printf("Hello, %s!\n", who)
 }
